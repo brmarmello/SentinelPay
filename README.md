@@ -4,6 +4,8 @@ SentinelPay e uma aplicacao completa de Machine Learning para detectar risco de 
 
 Repositorio: [github.com/brmarmello/SentinelPay](https://github.com/brmarmello/SentinelPay)
 
+Aplicacao em producao: [sentinelpay.streamlit.app](https://sentinelpay.streamlit.app)
+
 Este projeto foi reconstruido do zero a partir da ideia do desafio original, com foco em organizacao, didatica e deploy funcional.
 
 ## O Problema

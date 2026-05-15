@@ -2,6 +2,8 @@
 
 SentinelPay e uma aplicacao completa de Machine Learning para detectar risco de fraude em transacoes de cartao de credito, com pipeline modular, dashboard Streamlit, ajuste de limiar de decisao e explicabilidade com SHAP.
 
+Repositorio: [github.com/brmarmello/SentinelPay](https://github.com/brmarmello/SentinelPay)
+
 Este projeto foi reconstruido do zero a partir da ideia do desafio original, com foco em organizacao, didatica e deploy funcional.
 
 ## O Problema
@@ -33,19 +35,18 @@ As colunas `V1` a `V28` ja sao componentes PCA anonimizados. As colunas abertas 
 
 ```text
 .
-├── app.py                         # Dashboard Streamlit
-├── scripts/train.py               # Treino via terminal e salvamento de artefato
-├── src/sentinelpay/
-│   ├── config.py                  # Constantes e configuracao do modelo
-│   ├── data.py                    # Carregamento e resumo dos dados
-│   ├── features.py                # Feature engineering, split e escala
-│   ├── model.py                   # Treino e predicao
-│   └── evaluation.py              # Metricas e curvas
-├── tests/                         # Testes pequenos e rapidos
-├── notebooks/                     # Notebook Colab
-├── requirements.txt
-├── pyproject.toml
-└── runtime.txt                    # Python para Streamlit Cloud
+|-- app.py                         # Dashboard Streamlit
+|-- scripts/train.py               # Treino via terminal e salvamento de artefato
+|-- src/sentinelpay/
+|   |-- config.py                  # Constantes e configuracao do modelo
+|   |-- data.py                    # Carregamento e resumo dos dados
+|   |-- features.py                # Feature engineering, split e escala
+|   |-- model.py                   # Treino e predicao
+|   `-- evaluation.py              # Metricas e curvas
+|-- tests/                         # Testes pequenos e rapidos
+|-- notebooks/                     # Notebook Colab
+|-- requirements.txt
+`-- pyproject.toml
 ```
 
 ## Como Rodar Localmente
@@ -90,18 +91,20 @@ Abra o notebook em `notebooks/sentinelpay_colab.ipynb`. Ele segue a mesma ordem 
 4. avaliar resultados;
 5. interpretar metricas.
 
-Colab e util para exploracao e treino sem depender da maquina local. Para deploy, o caminho mais simples continua sendo Streamlit Cloud.
+Colab e util para exploracao e treino sem depender da maquina local. Para deploy, o caminho mais simples continua sendo Streamlit Community Cloud.
 
-## Deploy no Streamlit Cloud
+## Deploy no Streamlit Community Cloud
 
-1. Suba este projeto para um repositorio GitHub.
-2. Acesse [share.streamlit.io](https://share.streamlit.io/).
-3. Escolha o repositorio.
+1. Acesse [share.streamlit.io](https://share.streamlit.io/).
+2. Clique em `Create app`.
+3. Selecione `Yup, I have an app`.
 4. Configure:
+   - Repository: `brmarmello/SentinelPay`
    - Branch: `main`
    - Main file path: `app.py`
-   - Python: definido por `runtime.txt`
-5. Clique em deploy.
+   - App URL: `sentinelpay` (se o subdominio estiver disponivel)
+5. Em `Advanced settings`, selecione Python `3.12` ou `3.11`.
+6. Clique em `Deploy`.
 
 O `requirements.txt` instala o pacote local com `-e .`, entao os modulos dentro de `src/` funcionam no ambiente de deploy.
 
